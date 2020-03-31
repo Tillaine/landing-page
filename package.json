@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test-dev": "jest",
-    "dev": "nodemon server/index.js",
+    "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch & nodemon server/index.js"
   },
   "repository": {
