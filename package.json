@@ -1,0 +1,58 @@
+{
+  "name": "landing-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-dev": "jest",
+    "dev": "nodemon server/index.js",
+    "react-dev": "webpack -d --watch & nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FEC-ghrden02/landing-page.git"
+  },
+  "author": "Uguudei Tumur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FEC-ghrden02/landing-page/issues"
+  },
+  "homepage": "https://github.com/FEC-ghrden02/landing-page#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "core-js": "^3.6.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jest": "^25.1.0",
+    "live-server": "^1.2.1",
+    "morgan": "^1.9.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.2",
+    "pg": "^7.17.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "sqlite3": "^4.1.1",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.23.0",
+    "cors": "^2.8.5",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "image-webpack-loader": "^6.0.0",
+    "prettier": "^1.19.1",
+    "react-addons-test-utils": "^15.6.2",
+    "webpack": "^2.2.1"
+  }
+}
