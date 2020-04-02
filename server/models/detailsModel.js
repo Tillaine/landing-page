@@ -22,8 +22,35 @@ const modelDetails = (details) => {
  })
 };
 
+const updateDetails = (updates) => {
+  let queryString = `UPDATE venicle SET `;
+  for(let i in updates) {
+    queryString += `${i} = "${updates[i]}", ` 
+  }
+   queryString = queryString.slice(0, queryString.length -2)
+ queryString += ` WHERE id='11'`;
+ console.log('queryString', queryString)
+
+ return new Promise((resolve, reject) => {
+   connection.query(queryString, (err, details) => {
+    if (err) { reject(err) }
+    else { resolve(details) }
+})
+ })
+};
+
+const deleteDetails = (carId) => {
+  const queryString = `DELETE FROM venicle WHERE id='${carId}'`;
+ return new Promise((resolve, reject) => {
+   connection.query(queryString, (err, details) => {
+    if (err) { reject(err) }
+    else { resolve(details) }
+})
+ })
+};
 
 
 
 
-module.exports = { getAllDetails, modelDetails };
+
+module.exports = { getAllDetails, modelDetails, updateDetails, deleteDetails };

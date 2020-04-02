@@ -53,3 +53,16 @@ CREATE TABLE venicle
     ('12609', 'Kia Forte', '2.0L I-4 Cyl', 'Red', '29 mpg City 38 mpg Hwy', 22389, 'Wireless phone connectivity', 'Split folding rear seat', 'Steering wheel mounted audio controls', 'Exterior parking camera rear', 'Remote keyless entry', 'Alloy wheels')
 
 
+-- { "id": 1,
+--   "cost": '13000',
+--   "name": 'Toyota Yaris',
+--   "engine": '1.5L I-4 Cyl',
+--   "color": 'Pulse',
+--   "MPG": '32 mpg City 40 mpg Hwy',
+--   "mileage": '33,886',
+--   "feature_one": 'Wireless phone connectivity',
+--   "feature_two": 'Split folding rear seat',
+--   "feature_three": 'Steering wheel mounted audio controls',
+--   "feature_four": 'Exterior parking camera rear',
+--   "feature_five": 'Remote keyless entry',
+--   "feature_six": 'Alloy wheels' }

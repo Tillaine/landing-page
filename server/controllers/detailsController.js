@@ -15,6 +15,25 @@ const postDetails = (req, res) => {
   .then(details => {
     console.log(details)
   })
-  res.send(created)
+  res.send('created')
 }
-module.exports = { getAllDetails, postDetails }
+
+
+const updateDetails = (req, res) => {
+  model.updateDetails(req.body)
+  .then(details => {
+    console.log(details)
+  })
+  res.send('updated')
+}
+
+const deleteDetails = (req, res) => {
+  model.deleteDetails(req.query.id)
+  .then(details => {
+    console.log(details)
+    res.send(204)
+  })
+  .catch(err => console.log('err from db:', err))
+}
+
+module.exports = { getAllDetails, postDetails, updateDetails, deleteDetails }
