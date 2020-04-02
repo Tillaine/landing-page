@@ -33,6 +33,7 @@ const fakeCar = () => {
     return car;
 }
 
+module.exports = fakeCar
  
 // -- ['Tesla Pretense', 'Ford Bronco', 'Nissan Thunder Punch', 'Kia Forte', 'Ford Focus', 'Kia Soul', "Toyota it'ill run", 'Toyota Yaris', 'Nissan Sentra', 'Ford Focus', 'Nissan Sentra', 'Hyundai Accent', 'Kia Rio S', 'Chevrolet Cruze',]
 
