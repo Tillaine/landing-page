@@ -5,8 +5,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      details: tempData,
-      carId: 2
+      details: []
     };
     this.getAllDetails = this.getAllDetails.bind(this);
   }
@@ -16,10 +15,9 @@ class App extends React.Component {
   }
 
   getAllDetails() {
-    fetch(`http://localhost:3004/api/details?term=${this.state.carId}`)
+    fetch('http://localhost:3004/api/details')
       .then((response) => response.json())
       .then((data) => {
-        console.log('data', data)
         this.setState({
           details: data,
         });
@@ -49,19 +47,5 @@ class App extends React.Component {
   }
 }
 
-const tempData = [{
-  id: 1,
-  cost: '13000',
-  name: 'Toyota Yaris',
-  engine: '1.5L I-4 Cyl',
-  color: 'Pulse',
-  MPG: '32 mpg City 40 mpg Hwy',
-  mileage: '33,886',
-  feature_one: 'Wireless phone connectivity',
-  feature_two: 'Split folding rear seat',
-  feature_three: 'Steering wheel mounted audio controls',
-  feature_four: 'Exterior parking camera rear',
-  feature_five: 'Remote keyless entry',
-  feature_six: 'Alloy wheels' }]
 
 export default App;
