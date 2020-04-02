@@ -3,6 +3,7 @@ import DetailListItem from './DetailListItem.jsx';
 // import DetailListHighlightItem from './DetailListHighlightItem.jsx';
 
 const DetailList = (props) => {
+  console.log('data in list', props.details)
   let DetailListComponents = props.details.map( (currentItem) => {
     return (
       <DetailListItem 

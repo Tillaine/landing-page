@@ -1,16 +1,14 @@
 const connection = require('../db/connection.js');
 
-const getAllDetails = callback => {
-  const queryString = `SELECT * FROM venicle WHERE id='1'`;
-
-  connection.query(queryString, (error, results, fields) => {
-    if (error) {
-      console.log(error);
-      callback(error);
-    } else {
-      callback(null, results);
-    }
-  });
+const getAllDetails = (carId) => {
+  const queryString = `SELECT * FROM venicle WHERE id="${1}"`;
+ return new Promise((resolve, reject) => {
+   connection.query(queryString, (err, details) => {
+    if (err) { reject(err) }
+    else { resolve(details) }
+})
+ })
 };
+
 
 module.exports = { getAllDetails };
