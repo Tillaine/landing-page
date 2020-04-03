@@ -13,7 +13,7 @@ module.exports = {
       {
         test: /\.jsx?/,
         include: SRC_DIR,
-        loader: ['babel-loader', 'image-webpack-loader'],
+        loader: 'babel-loader',
         query: {
           presets: ['react', 'env']
         }

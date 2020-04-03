@@ -1,12 +1,39 @@
 const model = require('../models/detailsModel');
 
 const getAllDetails = (req, res, next) => {
-  model.getAllDetails((error, results) => {
-    if (error) {
-      return res.status(400).send(error);
-    }
-    res.status(201).json({ details: results });
-  });
-};
+  model.getAllDetails(req.query.term)
+  .then(details => {
+    res.send(details)
+  
+  })
+  .then()
+  .catch(err => console.log('err from db', err))
+}
 
-module.exports = { getAllDetails };
+const postDetails = (req, res) => {
+  model.modelDetails(req.body)
+  .then(details => {
+    console.log(details)
+  })
+  res.send('created')
+}
+
+
+const updateDetails = (req, res) => {
+  model.updateDetails(req.body)
+  .then(details => {
+    console.log(details)
+  })
+  res.send('updated')
+}
+
+const deleteDetails = (req, res) => {
+  model.deleteDetails(req.query.id)
+  .then(details => {
+    console.log(details)
+    res.send(204)
+  })
+  .catch(err => console.log('err from db:', err))
+}
+
+module.exports = { getAllDetails, postDetails, updateDetails, deleteDetails }

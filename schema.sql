@@ -52,4 +52,19 @@ CREATE TABLE venicle
     ('12569', 'Ford Focus', '2.0L I-4 Cyl', 'Charcoal', '26 mpg City 36 mpg Hwy', 35286, 'Parking sensors', 'Front dual zone A/C', 'Steering wheel mounted audio controls', 'Exterior parking camera rear', 'Remote keyless entry', 'Emergency communication system'),
     ('12609', 'Kia Forte', '2.0L I-4 Cyl', 'Red', '29 mpg City 38 mpg Hwy', 22389, 'Wireless phone connectivity', 'Split folding rear seat', 'Steering wheel mounted audio controls', 'Exterior parking camera rear', 'Remote keyless entry', 'Alloy wheels')
 
+-- ['Tesla Pretense', 'Ford Bronco', 'Nissan Thunder Punch', 'Kia Forte', 'Ford Focus', 'Kia Soul', "Toyota it'ill run", 'Toyota Yaris', 'Nissan Sentra', 'Ford Focus', 'Nissan Sentra', 'Hyundai Accent', 'Kia Rio S', 'Chevrolet Cruze',]
 
+
+-- { "id": "11",
+--   "cost": "23000",
+--   "name": "Toyota Yaris",
+--   "engine": "1.5L I-4 Cyl",
+--   "color": "Pulse",
+--   "MPG": "32 mpg City 40 mpg Hwy",
+--   "mileage": "33,886",
+--   "feature_one": "Wireless phone connectivity",
+--   "feature_two": "Split folding rear seat",
+--   "feature_three": "Steering wheel mounted audio controls",
+--   "feature_four": "Exterior parking camera rear",
+--   "feature_five": "Remote keyless entry",
+--   "feature_six": "Alloy wheels" }

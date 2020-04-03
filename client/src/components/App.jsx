@@ -19,7 +19,7 @@ class App extends React.Component {
       .then((response) => response.json())
       .then((data) => {
         this.setState({
-          details: data.details,
+          details: data,
         });
       })
       .catch(function(err) {
@@ -46,5 +46,6 @@ class App extends React.Component {
     );
   }
 }
+
 
 export default App;
