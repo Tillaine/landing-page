@@ -31,7 +31,7 @@ let Car = mongoose.model('Car', carModel);
 let addManyCars = (cars) => {
     
     return new Promise((resolve, reject) => {
-        Car.collection.insert(cars, (err, docs) => {
+        Car.collection.insertMany(cars, (err, docs) => {
             if(err) { reject(err) }
             else {resolve (docs.length)}
         })
