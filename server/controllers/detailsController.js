@@ -18,6 +18,14 @@ const postDetails = (req, res) => {
   res.send('created')
 }
 
+const addManyCars = (req, res) => {
+  model.addManyCars(req.body)
+  .then(details => {
+    console.log(details)
+  })
+  res.send('created')
+}
+
 
 const updateDetails = (req, res) => {
   model.updateDetails(req.body)
@@ -36,4 +44,4 @@ const deleteDetails = (req, res) => {
   .catch(err => console.log('err from db:', err))
 }
 
-module.exports = { getAllDetails, postDetails, updateDetails, deleteDetails }
+module.exports = { getAllDetails, postDetails, updateDetails, deleteDetails, addManyCars }
