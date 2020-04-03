@@ -37,9 +37,12 @@ const fakeCar = () => {
 
 
 createCars = (num) => {
-    const cars = carBatch(1000)
-    console.log('cars$$$$$$', cars.length)
-    addManyCars(cars)
+    const batchsize = 100000
+    const numOfBatches = num/batchsize
+    for(let i = 0; i< numOfBatches; i++){
+        const cars = carBatch(batchsize)
+        addManyCars(cars)
+    }
 
 // const cars = await carBatch(num)
 
@@ -59,7 +62,9 @@ const cars = []
 return cars
 
 }
-createCars(10000)
+
+
+createCars(2000000)
  
 // -- ['Tesla Pretense', 'Ford Bronco', 'Nissan Thunder Punch', 'Kia Forte', 'Ford Focus', 'Kia Soul', "Toyota it'ill run", 'Toyota Yaris', 'Nissan Sentra', 'Ford Focus', 'Nissan Sentra', 'Hyundai Accent', 'Kia Rio S', 'Chevrolet Cruze',]
 
