@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/fetcher');
+mongoose.connect('mongodb://localhost:27017/cars');
 
 const connection = mongoose.connection;
 
@@ -28,22 +28,37 @@ let carModel = new mongoose.Schema({
 let Car = mongoose.model('Car', carModel);
 
 
-let addCar = (cars) => {
-  cars.forEach(car => {
-   let newCar = new Car(car);
-    newModel.save((err) => {
-      if(err) {return console.log('save err', err)}
-      else { return newCar }
+let addManyCars = (cars) => {
+    
+    return new Promise((resolve, reject) => {
+        Car.collection.insert(cars, (err, docs) => {
+            if(err) { reject(err) }
+            else {resolve (docs.length)}
+        })
+
     })
+}
 
-  })
 
+  let addCar = (car) => {
+    
+    let newCar = new Car(car);
+    return new Promise((resolve, reject) => {
+         newCar.save((err) => {
+           if(err) {reject (err)}
+           else { resolve (newCar) }
+         })
+
+
+    })
+  
+  
 }
 
 let getCar = () => {
 return new Promise((resolve, reject) => {
 
-    Repo.find((err, Car) => {
+    Car.find((err, Car) => {
       if (err) {reject(err)}
       else {
         resolve(Car)
@@ -53,6 +68,6 @@ return new Promise((resolve, reject) => {
 
 }
 
-module.exports.save = addCar;
-module.exports.getRepos = getCar;
+module.exports = {addManyCars, getCar, addCar}
+
 

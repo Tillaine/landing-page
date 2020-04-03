@@ -1,4 +1,5 @@
 const connection = require('../db/connection.js');
+const mongo = require('../db/db.js')
 
 const getAllDetails = (carId) => {
   const queryString = `SELECT * FROM venicle WHERE id="${1}"`;
@@ -10,7 +11,29 @@ const getAllDetails = (carId) => {
  })
 };
 
-const modelDetails = (details) => {
+// ************************
+// add details mysql
+// ************************
+
+const addManyCars = (car) => {
+  return mongo.addManyCars(car)
+    console.log(mongo) 
+};
+
+const modelDetails = (car) => {
+  
+  return mongo.addCar(car)
+    console.log(mongo) 
+    
+
+ 
+};
+
+
+// ************************
+// add details mysql
+// ************************
+const xmodelDetails = (details) => {
   const {cost, name, engine, color, MPG, mileage, feature_one, feature_two, feature_three, feature_four, feature_five, feature_six} = details;
   const queryString = `INSERT INTO venicle (cost, name, engine, color, MPG, mileage, feature_one, feature_two, feature_three, feature_four, feature_five, feature_six)
   VALUES ("${cost}", "${name}", "${engine}", "${color}", "${MPG}", "${mileage}", "${feature_one}", "${feature_two}", "${feature_three}", "${feature_four}", "${feature_five}", "${feature_six}")`;
@@ -53,4 +76,4 @@ const deleteDetails = (carId) => {
 
 
 
-module.exports = { getAllDetails, modelDetails, updateDetails, deleteDetails };
+module.exports = { getAllDetails, modelDetails, updateDetails, deleteDetails, addManyCars };

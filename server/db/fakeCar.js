@@ -9,7 +9,7 @@ const name = ['Tesla Pretense', 'Ford Bronco', 'Nissan Thunder Punch', 'Kia Fort
   const MPG = []
   const mileage = [1000, 45, 0, 78320, 454839, 5438924, 54378297,983242, 923489, 542890, 543289, 109, 4320, 5429]
   const feature = ['That thing your firend has', 'Parking sensors', 'Front dual zone A/C', 'Steering wheel mounted audio controls', 'Exterior parking camera rear', 'Remote keyless entry', 'Emergency communication system', 'Wireless phone connectivity', 'Split folding rear seat', 'Steering wheel mounted audio controls', 'Exterior parking camera rear', 'Remote keyless entry', 'Alloy wheels']
-  
+  const id = 1;
 const getDetail = (detail) => {
     return detail[Math.floor(Math.random() * detail.length)]
 }
@@ -34,6 +34,21 @@ const fakeCar = () => {
 }
 
 module.exports = fakeCar
+
+createCars = () => {
+
+    const carBatch = () => {
+        
+        
+        for(let i = 0; i< 100; i++){
+        let newCar = fakeCar();
+        newCar.id = id;
+        id++;
+        }
+    }
+
+}
+
  
 // -- ['Tesla Pretense', 'Ford Bronco', 'Nissan Thunder Punch', 'Kia Forte', 'Ford Focus', 'Kia Soul', "Toyota it'ill run", 'Toyota Yaris', 'Nissan Sentra', 'Ford Focus', 'Nissan Sentra', 'Hyundai Accent', 'Kia Rio S', 'Chevrolet Cruze',]
 
