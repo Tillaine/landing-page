@@ -15,8 +15,8 @@ const getAllDetails = (carId) => {
 // add details mysql
 // ************************
 
-const addManyCars = (car) => {
-  return mongo.addManyCars(car)
+const addManyCars = (cars) => {
+  return mongo.addManyCars(cars)
     console.log(mongo) 
 };
 

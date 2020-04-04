@@ -3,6 +3,7 @@ const model = require('../models/detailsModel');
 const getAllDetails = (req, res, next) => {
   model.getAllDetails(req.query.term)
   .then(details => {
+    console.log('get' , details)
     res.send(details)
   
   })

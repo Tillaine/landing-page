@@ -33,7 +33,7 @@ let addManyCars = (cars) => {
     return new Promise((resolve, reject) => {
         Car.collection.insertMany(cars, (err, docs) => {
             if(err) { reject(err) }
-            else {resolve (docs.length)}
+            else {resolve (docs.length, 'added')}
         })
 
     })
