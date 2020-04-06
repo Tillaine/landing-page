@@ -8,8 +8,9 @@ connection.once('open', function() {
 });
 connection.on('error', console.error.bind(console, 'connection error:'));
 
+
 let carModel = new mongoose.Schema({
-    id: Number,
+    id: {type : 'Number', index : true},
     cost: Number,
     name: String,
     engine: String,
@@ -25,8 +26,8 @@ let carModel = new mongoose.Schema({
 });
 
 
-let Car = mongoose.model('Car', carModel);
 
+let Car = mongoose.model('Car', carModel);
 
 let addManyCars = (cars) => {
     

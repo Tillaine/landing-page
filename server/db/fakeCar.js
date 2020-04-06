@@ -65,7 +65,7 @@ const carBatch = (num) => {
 const cars = [] 
     for(let i = 0; i< num; i++){
     let newCar = fakeCar();
-    newCar.id = id;
+    newCar.id = {id};
     cars.push(newCar)
     id++;
     }   
@@ -73,12 +73,13 @@ return cars
 
 }
 // *****************************
-// create 10million cars 
-// *****************************
+// create cars mongodb
+// // *****************************
 // let count = 0; 
 // while (count < 5) {
 // count ++
-//     createCars(2000000)
+//     createCars(2000000) 
+//     // createCars(2) 
 // }
  
 
