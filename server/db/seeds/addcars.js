@@ -1,12 +1,10 @@
 const { carBatch } = require('../fakeCar.js')
 
-console.log('cars from addcars seed', carBatch(10))
-
-exports.seed = function(knex) {
+exports.seed = async function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('cars').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('cars').insert(carBatch(200000));
-    });
+  knex('cars').del()
+  for(let i = 0; i<10000; i++){
+    await knex('cars').insert(carBatch(1000));
+    }
+    console.log('done')
 };
