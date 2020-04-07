@@ -1,7 +1,7 @@
 const model = require('../models/detailsModel');
 
 const getAllDetails = (req, res, next) => {
-  model.getAllDetails(req.query.term)
+  model.getOneCar(req.query.term)
   .then(details => {
     console.log('get' , details)
     res.send(details)
@@ -29,11 +29,18 @@ const addManyCars = (req, res) => {
 
 
 const updateDetails = (req, res) => {
-  model.updateDetails(req.body)
+  const id = req.body.id
+  model.updateMongo(req.body, req.body.id)
   .then(details => {
-    console.log(details)
+    console.log('details after update', details)
+    model.findById(id)
+    .then(updatedCar => {
+      console.log('updated car', updatedCar)
+      res.send(updatedCar)})
+      .catch(err => console.log('db err', err))
   })
-  res.send('updated')
+  .catch(err => console.log('db err', err))
+  
 }
 
 const deleteDetails = (req, res) => {

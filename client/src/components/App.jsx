@@ -19,7 +19,7 @@ class App extends React.Component {
       .then((response) => response.json())
       .then((data) => {
         this.setState({
-          details: data,
+          details: [data],
         });
       })
       .catch(function(err) {
@@ -47,5 +47,19 @@ class App extends React.Component {
   }
 }
 
-
+const tempData = 
+[{_id: '5e8cfff5a4f4160aa62c373b',
+name: 'Toyota Yaris',
+price: 9000,
+engine: '1.8L I-4 Cyl',
+color: 'Barbie Pink',
+MPG: '1.5L I-4 Cyl',
+mileage: 78320,
+feature_one: 'pay phone',
+feature_two: 'Front dual zone A/C',
+feature_three: 'Alloy wheels',
+feature_four: 'Remote keyless entry',
+feature_five: 'Parking sensors',
+feature_six: 'Alloy wheels',
+id: 20 }]
 export default App;

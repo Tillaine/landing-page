@@ -8,9 +8,10 @@ connection.once('open', function() {
 });
 connection.on('error', console.error.bind(console, 'connection error:'));
 
+mongoose.set('useFindAndModify', false)
 
 let carModel = new mongoose.Schema({
-    id: {type : 'Number', index : true},
+    id: Number,
     cost: Number,
     name: String,
     engine: String,
@@ -69,6 +70,32 @@ return new Promise((resolve, reject) => {
 
 }
 
-module.exports = {addManyCars, getCar, addCar}
+const findById = (id) => {
+    return new Promise((resolve, reject) => {
+        console.log(id)
+        Car.findById('5e8cfff5a4f4160aa62c373b', (err, Car) => {
+          if (err) {reject(err)}
+          else { resolve(Car) }
+      })
+    })
+}
+
+const updateMongo = (updates, id) => {
+    return new Promise((resolve, reject) => {
+    Car.findByIdAndUpdate({_id: id}, {$set: updates}, (err, updated) => {
+            if (err) {reject(err)}
+            else{ 
+                resolve (updated)}
+        })
+    })
+}
+
+// cars.findOneAndUpdate({id: {id: 7}},{$set: {"color": "Barbie Pink", "feature_one": "pay phone" }})
+
+
+
+module.exports = {addManyCars, getCar, addCar, updateMongo, findById}
+
+
 
 
