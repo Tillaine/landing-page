@@ -73,7 +73,7 @@ return new Promise((resolve, reject) => {
 const findById = (id) => {
     return new Promise((resolve, reject) => {
         console.log(id)
-        Car.findById('5e8cfff5a4f4160aa62c373b', (err, Car) => {
+        Car.find({id}, (err, Car) => {
           if (err) {reject(err)}
           else { resolve(Car) }
       })

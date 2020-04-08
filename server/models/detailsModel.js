@@ -63,7 +63,7 @@ const deleteDetails = (carId) => {
 // ************************
 
 const getOneCar = (carId) => {
-  return mongo.findById(1);
+  return mongo.findById(carId);
 };
 
 const addManyCars = (cars) => {
@@ -104,7 +104,7 @@ const deleteMongo = (carId) => {
 
 const getCarPg = (id) => {
   
-  return pg.getCarPostgres()
+  return pg.getCarPostgres(id)
     
 
   }

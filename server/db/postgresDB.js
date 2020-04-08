@@ -5,14 +5,14 @@ const getCarPostgres = (id) => {
     
     return db.select('*')
     .from('cars')
-    .where({id: 1})
+    .where({id})
 
 }
 
 const updatePg = (id, updates) => {
     
     return db('cars')
-    .where({id: 1})
+    .where({id: id})
     .update(updates)
 
 

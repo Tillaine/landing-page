@@ -1,9 +1,17 @@
 const model = require('../models/detailsModel');
 //for mongo wrap details in [] before sending
 const getAllDetails = (req, res, next) => {
-  model.getCarPg(req.query.term)
+  console.log('req.query.term', req.query.term)
+  // model.getCarPg(req.query.term)
+  model.getOneCar(req.query.term)
   .then(details => {
-    console.log('get' , details)
+    // console.log('get' , details)
+    // if (Array.isArray(details)){
+    //   res.send(details)
+    // } else {
+    //   const detailArr = [details]
+    //   res.send(detailArr)
+    // }
     res.send(details)
   
   })
