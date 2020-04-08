@@ -1,7 +1,7 @@
 const model = require('../models/detailsModel');
-
+//for mongo wrap details in [] before sending
 const getAllDetails = (req, res, next) => {
-  model.getOneCar(req.query.term)
+  model.getCarPg(req.query.term)
   .then(details => {
     console.log('get' , details)
     res.send(details)

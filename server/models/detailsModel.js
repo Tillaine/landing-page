@@ -1,6 +1,11 @@
 const connection = require('../db/connection.js');
 const mongo = require('../db/db.js')
+const pg = require('../db/postgresDB.js')
 
+
+// ************************
+//  mysql
+// ************************
 const getAllDetails = (carId) => {
   const queryString = `SELECT * FROM venicle WHERE id="${1}"`;
  return new Promise((resolve, reject) => {
@@ -13,10 +18,6 @@ const getAllDetails = (carId) => {
 
 
 
-
-// ************************
-// add details mysql
-// ************************
 const xmodelDetails = (details) => {
   const {cost, name, engine, color, MPG, mileage, feature_one, feature_two, feature_three, feature_four, feature_five, feature_six} = details;
   const queryString = `INSERT INTO venicle (cost, name, engine, color, MPG, mileage, feature_one, feature_two, feature_three, feature_four, feature_five, feature_six)
@@ -93,11 +94,31 @@ return mongo.findById(id);
 }
 
 
+const deleteMongo = (carId) => {
+  mongo.deleteCar(carId)
+};
+
+// ************************
+// postgres
+// ************************
+
+const getCarPg = (id) => {
+  
+  return pg.getCarPostgres()
+    
+
+  }
+ 
+const updatePG = (id, updates) => {
+
+  return pg.updatePg()
+  
+  
+
+}
 
 
-
-
-module.exports = { findById, getOneCar, modelDetails, updateDetails, deleteDetails, addManyCars, updateMongo };
+module.exports = { updatePG, getCarPg, deleteMongo, findById, getOneCar, modelDetails, updateDetails, deleteDetails, addManyCars, updateMongo };
 
 
 // ************************

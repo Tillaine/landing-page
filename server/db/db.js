@@ -90,11 +90,21 @@ const updateMongo = (updates, id) => {
     })
 }
 
+const deleteCar = (id) => {
+return new Promise((resolve, reject) => {
+  Car.remove({_id: id}, (err, note) => {
+    if(err) {reject(err)}
+    else{resolve(note) }
+  } )
+
+})
+}
+
 // cars.findOneAndUpdate({id: {id: 7}},{$set: {"color": "Barbie Pink", "feature_one": "pay phone" }})
 
 
 
-module.exports = {addManyCars, getCar, addCar, updateMongo, findById}
+module.exports = {deleteCar, addManyCars, getCar, addCar, updateMongo, findById}
 
 
 
