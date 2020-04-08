@@ -11,7 +11,7 @@ connection.on('error', console.error.bind(console, 'connection error:'));
 mongoose.set('useFindAndModify', false)
 
 let carModel = new mongoose.Schema({
-    id: Number,
+    id: { type: Number, index: true },
     cost: Number,
     name: String,
     engine: String,
@@ -82,7 +82,7 @@ const findById = (id) => {
 
 const updateMongo = (updates, id) => {
     return new Promise((resolve, reject) => {
-    Car.findByIdAndUpdate({_id: id}, {$set: updates}, (err, updated) => {
+    Car.findByIdAndUpdate({id: id}, {$set: updates}, (err, updated) => {
             if (err) {reject(err)}
             else{ 
                 resolve (updated)}

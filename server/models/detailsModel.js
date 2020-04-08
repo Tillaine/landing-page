@@ -63,7 +63,7 @@ const deleteDetails = (carId) => {
 // ************************
 
 const getOneCar = (carId) => {
-  return mongo.findById('5e8cfff5a4f4160aa62c3728');
+  return mongo.findById(1);
 };
 
 const addManyCars = (cars) => {
