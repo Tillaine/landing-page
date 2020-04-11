@@ -8,6 +8,7 @@ module.exports = {
         seeds: {
             directory: "./server/db/seeds"
         },
+        pool: {min:5, max: 100},
         useNullAsDefault: true
     }
 }

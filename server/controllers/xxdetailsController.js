@@ -1,27 +1,39 @@
 const model = require('../models/detailsModel');
-const redis = require('redis');
-const client = redis.createClient();
+var redisPool = require('redis-connection-pool')('myRedisPool', {
+  host: '127.0.0.1', // default
+  port: 6379, //default
+  // optionally specify full redis url, overrides host + port properties
+  // url: "redis://username:password@host:port"
+  max_clients: 100, // defalut
+  perform_checks: false, // checks for needed push/pop functionality
+  database: 0, // database number to use
+  options: {
+    auth_pass: 'password'
+  } //options for createClient of node-redis, optional
+});
 
-// Print redis errors to the console
-client.on('error', (err) => {
-    console.log("Error " + err);
-  });
+redisPool.set('test-key', 'foobar', function (err) {
+redisPool.get('test-key', function (err, reply) {
+  console.log(reply); // 'foobar'
+});
+});
+
 
 //for mongo wrap details in [] before sending
 const getAllDetails = (req, res, next) => {
   const term = req.query.term;
-  return client.get(`carID:${term}`, (err, result) => {
+  return redisPool.get(`carID:${term}`, (err, result) => {
     // If that key exist in Redis store
     if (result) { 
       let details = JSON.parse(result);
 
-      console.log('details, ', details.results)
+      console.log('details, ', result)
       res.send(details.details);
     } else {
     // model.getCarPg(req.query.term)
     model.getOneCar(req.query.term)
     .then(details => {
-      client.setex(`carID:${term}`, 3600, JSON.stringify({ source: 'Redis Cache', details }));
+      redisPool.set(`carID:${term}`, JSON.stringify({ source: 'Redis Cache', details }));
       res.send(details)
   
     })
@@ -52,8 +64,10 @@ const updateDetails = (req, res) => {
   const id = req.body.id
   model.updateMongo(req.body, req.body.id)
   .then(details => {
+    console.log('details after update', details)
     model.findById(id)
     .then(updatedCar => {
+      console.log('updated car', updatedCar)
       res.send(updatedCar)})
       .catch(err => console.log('db err', err))
   })
@@ -64,6 +78,7 @@ const updateDetails = (req, res) => {
 const deleteDetails = (req, res) => {
   model.deleteDetails(req.query.id)
   .then(details => {
+    console.log(details)
     res.send(204)
   })
   .catch(err => console.log('err from db:', err))

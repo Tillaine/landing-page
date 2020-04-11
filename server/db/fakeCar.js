@@ -86,4 +86,3 @@ count ++
 
 module.exports = {fakeCar, carBatch}
 
-const ids = ["5e8cfff5a4f4160aa62c3728", "5e8cfff5a4f4160aa62c3732", "5e8cfff5a4f4160aa62c3733", "5e8cfff5a4f4160aa62c3734", "5e8cfff5a4f4160aa62c3735", "5e8cfff5a4f4160aa62c3736", "5e8cfff5a4f4160aa62c373a", "5e8cfff5a4f4160aa62c373b", "5e8cfff5a4f4160aa62c3739", "5e8cfff5a4f4160aa62c3738"]
