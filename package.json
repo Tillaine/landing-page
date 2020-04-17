@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test-dev": "jest",
-    "start": "nodemon server/index.js",
-    "react-dev": "webpack -d --watch & nodemon server/index.js"
+    "start": "node server/index.js",
+    "react-dev": "webpack -d --watch & nodemon server/index.js",
+    "redis-server": "redis-server"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jest": "^25.1.0",
-    "knex": "^0.20.13",
+    "knex": "^0.20.15",
     "live-server": "^1.2.1",
     "mongoose": "^5.9.7",
     "morgan": "^1.9.1",

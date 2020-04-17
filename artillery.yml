@@ -1,24 +1,32 @@
 config:
-  target: 'http://localhost:3004'
+  target: 'http://ec2-18-217-19-84.us-east-2.compute.amazonaws.com/'
   phases:
     - duration: 20
       arrivalRate: 10
-      rampTo: 250
+      rampTo: 25
       name: 'warming up'
-    - duration: 2
-      arrivalRate: 1000
+    - duration: 3
+      arrivalRate: 10
       name: 'spiking'
-  variables:
-    carIds:
-      - [432, 1, 63899, 200000, 439543]
-      - [54329, 54392, 74378, 54, 4, 2, 899]
+  # variables:
+    # carIds:
+    #   - [432, 1, 63899, 200000, 439543]
+    #   - [54329, 54392, 74378,54, 4, 2, 899]
       
   
     
   defaults:
 scenarios:
   - flow:
-    - loop:
-      - get:
-          url: "/api/details?term={{ $loopElement }}"s
-          over: carIds
+    - get:
+        url: "/"
+         
+
+
+#   defaults:
+# scenarios:
+#   - flow:
+#     - loop:
+#       - get:
+#           url: "/api/details?term={{ $loopElement }}"
+#           over: carIds

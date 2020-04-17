@@ -18,8 +18,8 @@ const getAllDetails = (req, res, next) => {
       console.log('details, ', details.results)
       res.send(details.details);
     } else {
-    // model.getCarPg(req.query.term)
-    model.getOneCar(req.query.term)
+    model.getCarPg(req.query.term)
+    // model.getOneCar(req.query.term)
     .then(details => {
       client.setex(`carID:${term}`, 3600, JSON.stringify({ source: 'Redis Cache', details }));
       res.send(details)

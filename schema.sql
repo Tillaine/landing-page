@@ -3,9 +3,9 @@ CREATE DATABASE cars;
 USE cars;
 
 
-DROP TABLE IF EXISTS venicle;
+DROP TABLE IF EXISTS cars;
 
-CREATE TABLE venicle
+CREATE TABLE cars
 (
   id INTEGER NOT NULL
   AUTO_INCREMENT,
@@ -38,7 +38,7 @@ CREATE TABLE venicle
 );
 
 
-  INSERT INTO venicle
+  INSERT INTO cars
     (cost,name,engine, color, MPG, mileage, feature_one, feature_two, feature_three, feature_four, feature_five, feature_six)
   VALUES
     ('13000', 'Toyota Yaris', '1.5L I-4 Cyl', 'Pulse', '32 mpg City 40 mpg Hwy', '33,886', 'Wireless phone connectivity', 'Split folding rear seat', 'Steering wheel mounted audio controls', 'Exterior parking camera rear', 'Remote keyless entry', 'Alloy wheels'),

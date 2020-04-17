@@ -30,8 +30,8 @@ const getAllDetails = (req, res, next) => {
       console.log('details, ', result)
       res.send(details.details);
     } else {
-    // model.getCarPg(req.query.term)
-    model.getOneCar(req.query.term)
+    model.getCarPg(req.query.term)
+    // model.getOneCar(req.query.term)
     .then(details => {
       redisPool.set(`carID:${term}`, JSON.stringify({ source: 'Redis Cache', details }));
       res.send(details)

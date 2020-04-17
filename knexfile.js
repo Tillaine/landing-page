@@ -1,7 +1,12 @@
 module.exports = {
     development: {
         client: "postgresql", 
-        connection: `postgres://localhost:5432/cars`, 
+        connection: {
+            host: 'ec2-3-15-208-167.us-east-2.compute.amazonaws.com',
+            database: `cars`, 
+            user: 'davide',
+            password: 'jw8s0F4'
+        },
         migrations: {
             directory: "./server/db/migrations"
         },

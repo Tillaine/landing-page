@@ -7,10 +7,10 @@ const name = ['Tesla Pretense', 'Ford Bronco', 'Nissan Thunder Punch', 'Kia Fort
 
   const engine = ['1.5L I-4 Cyl', '1.8L I-4 Cyl', '2.0L I-4 Cyl', '2.0L I-4 Cyl', '1.8L I-4 Cyl', '1.12L I-6 Cyl']
   const color = ['Pinot Nior', 'Blind Rage Black', 'My Hearts So Blue', 'covid graphic red', 'Galvanize Orange', 'Secure Masculinity Pink' ]
-  const MPG = ['1.5L I-4 Cyl', '1.4L I-4 Cyl', '1.8L I-4 Cyl', '1.6L I-4 Cyl', '2.0L I-4 Cyl', '1.8L I-4 Cyl']
+  const mpg = ['1.5L I-4 Cyl', '1.4L I-4 Cyl', '1.8L I-4 Cyl', '1.6L I-4 Cyl', '2.0L I-4 Cyl', '1.8L I-4 Cyl']
   const mileage = [1000, 45, 0, 78320, 454839, 5438924, 54378297,983242, 923489, 542890, 543289, 109, 4320, 5429]
   const feature = ['That thing your firend has', 'Parking sensors', 'Front dual zone A/C', 'Steering wheel mounted audio controls', 'Exterior parking camera rear', 'Remote keyless entry', 'Emergency communication system', 'Wireless phone connectivity', 'Split folding rear seat', 'Steering wheel mounted audio controls', 'Exterior parking camera rear', 'Remote keyless entry', 'Alloy wheels']
-  let id = 1;
+  let id = 1798100;
 const getDetail = (detail) => {
     return detail[Math.floor(Math.random() * detail.length)]
 }
@@ -30,10 +30,10 @@ const getDetail = (detail) => {
 const fakeCar = () => {
     const car = {}
     car.name = getDetail(name)
-    car.price = getDetail(price)
+    car.cost = getDetail(price)
     car.engine = getDetail(engine)
     car.color = getDetail(color)
-    car.MPG = getDetail(MPG)
+    car.mpg = getDetail(mpg)
     car.mileage = getDetail(mileage)
     car.feature_one = getDetail(feature)
     car.feature_two = getDetail(feature)
