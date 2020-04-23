@@ -3,6 +3,70 @@ const mongo = require('../db/db.js')
 const pg = require('../db/postgresDB.js')
 
 
+
+// ************************
+// postgres
+// ************************
+
+const getCarPg = (id) => {
+  
+  return pg.getCarPostgres(id)
+    
+
+  }
+ 
+const updatePG = (id, updates) => {
+
+  return pg.updatePg()
+  
+  
+
+}
+
+// ************************
+// Mongo
+// ************************
+
+const getOneCar = (carId) => {
+  return mongo.findById(carId);
+};
+
+const addManyCars = (cars) => {
+  return mongo.addManyCars(cars)
+    console.log(mongo) 
+};
+
+const modelDetails = (car) => {
+  
+  return mongo.addCar(car)
+    console.log(mongo) 
+    
+
+ 
+};
+
+const updateMongo = (updates) => {
+  id = updates.id;
+  delete updates.id;
+ return mongo.updateMongo(updates, id)
+
+};
+
+const findById = (id) => {
+  console.log(id)
+return mongo.findById(id);
+
+}
+
+
+const deleteMongo = (carId) => {
+  mongo.deleteCar(carId)
+};
+
+
+
+module.exports = { updatePG, getCarPg, deleteMongo, findById, getOneCar, modelDetails, updateDetails, deleteDetails, addManyCars, updateMongo };
+
 // ************************
 //  mysql
 // ************************
@@ -56,70 +120,6 @@ const deleteDetails = (carId) => {
 })
  })
 };
-
-
-// ************************
-// Mongo
-// ************************
-
-const getOneCar = (carId) => {
-  return mongo.findById(carId);
-};
-
-const addManyCars = (cars) => {
-  return mongo.addManyCars(cars)
-    console.log(mongo) 
-};
-
-const modelDetails = (car) => {
-  
-  return mongo.addCar(car)
-    console.log(mongo) 
-    
-
- 
-};
-
-const updateMongo = (updates) => {
-  id = updates.id;
-  delete updates.id;
- return mongo.updateMongo(updates, id)
-
-};
-
-const findById = (id) => {
-  console.log(id)
-return mongo.findById(id);
-
-}
-
-
-const deleteMongo = (carId) => {
-  mongo.deleteCar(carId)
-};
-
-// ************************
-// postgres
-// ************************
-
-const getCarPg = (id) => {
-  
-  return pg.getCarPostgres(id)
-    
-
-  }
- 
-const updatePG = (id, updates) => {
-
-  return pg.updatePg()
-  
-  
-
-}
-
-
-module.exports = { updatePG, getCarPg, deleteMongo, findById, getOneCar, modelDetails, updateDetails, deleteDetails, addManyCars, updateMongo };
-
 
 // ************************
 // test Data Mongo 
