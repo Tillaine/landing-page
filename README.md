@@ -1,6 +1,15 @@
 # *# EchoPark Car Details*
 A micro service, supporting a scalable car buying app. 
 
+## Built With
+- React > front-end 
+- Node > for backened software
+- express > server 
+- mongoDB > database 
+- knex > connection
+- Docker > Deployment 
+- AWS > deployment 
+
 ## Getting Started
 - Ensure that you have node installed
 - Create a postgres database called cars
@@ -32,16 +41,6 @@ A micro service, supporting a scalable car buying app.
   [https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/tkv-create-ami-from-instance.html]
   - create and run docker containers 
 
-
-
-## Built With
-- React > front-end 
-- Node > for backened software
-- express > server 
-- mongoDB > database 
-- knex > connection
-- Docker > Deployment 
-- AWS > deployment 
 
 
 *# CRUD:*
