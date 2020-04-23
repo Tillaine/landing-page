@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test-dev": "jest",
-    "start": "nodemon server/index.js",
-    "react-dev": "webpack -d --watch & nodemon server/index.js"
+    "start": "node server/index.js",
+    "react-dev": "webpack -d --watch & nodemon server/index.js",
+    "redis-server": "redis-server"
   },
   "repository": {
     "type": "git",
@@ -20,20 +21,27 @@
   },
   "homepage": "https://github.com/FEC-ghrden02/landing-page#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "babel": "^6.23.0",
+    "compression": "^1.7.4",
     "core-js": "^3.6.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jest": "^25.1.0",
-    "knex": "^0.20.13",
+    "knex": "^0.20.15",
     "live-server": "^1.2.1",
     "mongoose": "^5.9.7",
     "morgan": "^1.9.1",
     "mysql": "^2.18.1",
+    "newrelic": "^6.5.0",
     "nodemon": "^2.0.2",
     "pg": "^7.18.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "redis": "^3.0.2",
+    "redis-connection-pool": "^1.7.2",
+    "redis-pooling": "^1.0.11",
+    "response-time": "^2.3.2",
     "sqlite3": "^4.1.1",
     "webpack-cli": "^3.3.10"
   },
